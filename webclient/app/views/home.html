@@ -1,0 +1,15 @@
+<div ng-controller="HomeController" class="container">
+  <!--p>
+  {{'GREETING' | translate}}
+  {{ myDate | date: "medium" }}
+  {{ 10.453452435 | number: 5 }}
+  {{ 10.453452435 | currency: '€'}}
+  </p-->
+  <div ng-if="isAuthorized">
+    <p>Messaggio per l'utente</p>
+  </div>
+
+  <!--button auth-click="openRegisterDialog()">click riservato</button-->
+  
+  {{CONFIG.API_URL}}
+</div>

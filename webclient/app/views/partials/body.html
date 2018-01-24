@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="row row-home" ng-include="'views/partials/customers.html'" ng-controller="CustomersController"></div>
+    <div class="row row-home-bottom" ng-include="'views/partials/openDeliveries.html'" ng-controller="OpenDeliveriesController"></div>
+  </div>
+  <div class="col-md-6">
+    <div class="row row-home-central" ng-include="'views/partials/news.html'" ng-controller="NewsController"></div>
+  </div>
+  <div class="col-md-3">
+    <div class="row row-home" ng-include="'views/partials/calendar.html'" ng-controller="CalendarController"></div>
+    <div class="row row-home-bottom" ng-include="'views/partials/week.html'" ng-controller="WeekController"></div>
+  </div>
+</div>

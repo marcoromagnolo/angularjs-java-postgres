@@ -1,0 +1,48 @@
+<div ng-controller="AccountController">
+  <div class="modal-body">
+
+    <div class="row">
+      <div class="col-md-6">
+        <form role="form" name="loginForm" novalidate>
+          <div class="form-group" ng-class="{'has-error': loginForm.username.$invalid && (loginForm.$submitted || loginForm.username.$touched)}">
+            <label for="username" translate>ACCOUNT_FORM_EMAIL_LABEL</label>
+            <input type="email" class="form-control" id="username" name="username" required placeholder="{{'ACCOUNT_FORM_EMAIL_PLACEHOLDER' | translate}}" ng-model="user.username"/>
+            <span class="help-block" ng-show="loginForm.$submitted || loginForm.username.$touched">
+              <span ng-show="loginForm.username.$error.required" translate>ERROR_FIELD_REQUIRED</span>
+            </span>
+          </div>
+          <div class="form-group" ng-class="{'has-error': loginForm.password.$invalid && (loginForm.$submitted || loginForm.password.$touched)}">
+            <label for="password" translate>ACCOUNT_FORM_PASSWORD_LABEL</label>
+            <input type="password" class="form-control" id="password" name="password" required placeholder="{{'ACCOUNT_FORM_PASSWORD_PLACEHOLDER' | translate}}" ng-model="user.password"/>
+            <span class="help-block" ng-show="loginForm.$submitted || loginForm.password.$touched">
+              <span ng-show="loginForm.password.$error.required" translate>ERROR_FIELD_REQUIRED</span>
+            </span>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label for="expiry">
+                <input type='checkbox' id="expiry"  ng-model="user.expiry" translate> {{'ACCOUNT_FORM_EXPIRY_LABEL' | translate}}
+              </label>
+            </div>
+          </div>
+          <button class="btn btn-default" ng-click="reset(loginForm)" translate>ACCOUNT_FORM_BTN_RESET</button>
+          <button class="btn btn-primary" ng-click="login(loginForm, user)" translate>ACCOUNT_FORM_BTN_LOGIN</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <button class="btn" style="color: #FFFFFF; font-size: 14px; font-weight: bold; background-color: #3c5a99; width:220px; text-align:left;"><img src="images/facebook_logo.png"> <span translate>ACCOUNT_LOGIN_WITH_FACEBOOK</span></button>
+        </div>
+        <div class="form-group">
+          <button class="btn" style="color: #FFFFFF; font-size: 14px; font-weight: bold; background-color: #00aced; width:220px; text-align:left;"><img src="images/twitter_logo.png"> <span translate>ACCOUNT_LOGIN_WITH_TWITTER</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-default pull-left" ng-click="goToRecovery()" translate>ACCOUNT_RECOVERY_LINK</button>
+    <button class="btn btn-default pull-right" ng-click="goToRegister()" translate>ACCOUNT_REGISTER_LINK</button>
+  </div>
+
+</div>

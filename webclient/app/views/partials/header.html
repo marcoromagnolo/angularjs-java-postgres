@@ -1,0 +1,44 @@
+<nav class="navbar navbar-inverse" style="border-radius: 0px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#/" ng-bind="CONFIG.NAME"></a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <img class="navbar-form navbar-left" ng-src="../../images/logo-scaled-white-2.png">
+      <h2 class="navbar-form navbar-left" style="color: white; margin-top: 0.6%; font-size:29px;">Delivery Management Tool</h2>
+<!-- C:\Users\AlePC\Desktop\Lavoro\jira-logo-scaled-white-2.png-->
+      <ul class="nav navbar-nav navbar-right">
+        <!--<li><a ng-href="#/"><span class="glyphicon glyphicon-home"></span> {{'MENU_HOME' | translate}}</a></li>-->
+        <li><a ng-href="#/"><span class="glyphicon glyphicon-home"></span> {{'MENU_HOME' | translate}}</a></li>
+        <li><a ng-href="#/delivery" ng-click="openAlerts()"><span class="glyphicon glyphicon-list"></span> {{'MENU_DELIVERIES' | translate}}</a></li>
+        <li><button ng-click="openRegisterDialog()" ng-show="!isAuthenticated" role="button" type="button" class="btn btn-primary btn-sm active" >{{'MENU_CREATES' | translate}}</button></li>
+        <!-- <li><a href="#" ng-click="openRegisterDialog()" ng-show="!isAuthenticated"><span class="btn btn-primary"></span> {{'MENU_CREATES' | translate}}</a></li> -->
+        <li><a href="#" ng-click="openProfile()" ng-show="isAuthenticated"><span class="glyphicon glyphicon-user"></span> {{'MENU_PROFILE' | translate}}</a></li>
+        <li><a href="#" ng-click="openLoginDialog()"><span class="glyphicon glyphicon-user"></span> {{'ACCOUNT_FORM_BTN_LOGIN' | translate}}</a></li>
+        <li class="dropdown" ng-show="isAuthenticated">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog"></span> {{'MENU_SETTINGS' | translate}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Generale</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Lingua</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Notizie</a></li>
+            <li><a href="#">Operazioni</a></li>
+          </ul>
+        </li>
+        <li><a href="#" ng-click="logout()" ng-show="isAuthenticated"><span class="glyphicon glyphicon-off"></span>{{'MENU_LOGOUT' | translate}}</a></li>
+      </ul>
+
+      <form class="navbar-form navbar-right" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="{{'MENU_SEARCH_PLACEHOLDER' | translate}}">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+          </span>
+        </div>
+        <!-- <button class="btn"><span class="glyphicon glyphicon-filter" aria-hidden="true"></span>{{'MENU_FILTER' | translate}}</button> -->
+      </form>
+    </div>
+  </div>
+</nav>

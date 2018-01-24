@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+              <property name="host" value="${smtp.server.host}"/>
+              <property name="port" value="${smtp.server.port}"/>
+              <property name="username" value="${smtp.username}"/>
+              <property name="password" value="${smtp.password}"/>
+              <property name="javaMailProperties">
+                     <props>
+                            <prop key="mail.smtp.auth">${smtp.server.auth}</prop>
+                            <prop key="mail.smtp.ssl.enable">${smtp.ssl}</prop>
+                            <prop key="mail.smtp.starttls.enable">${smtp.starttls}</prop>
+                            <prop key="mail.debug">${smtp.debug}</prop>
+                     </props>
+              </property>
+       </bean>
+
+       <bean id="recoveryMessage" class="org.springframework.mail.SimpleMailMessage">
+              <property name="from" value="${smtp.mail.from}"/>
+              <property name="bcc" value="${smtp.mail.bcc}"/>
+       </bean>
+</beans>

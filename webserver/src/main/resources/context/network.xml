@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="network" class="dmt.server.component.Network">
+              <constructor-arg index="0" value="${network.proxy.host}" />
+              <constructor-arg index="1" value="${network.proxy.port}" />
+              <constructor-arg index="2" value="${network.proxy.username}" />
+              <constructor-arg index="3" value="${network.proxy.password}" />
+       </bean>
+</beans>

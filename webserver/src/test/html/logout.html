@@ -1,0 +1,27 @@
+<html>
+
+<head><title>Logout Page</title></head>
+
+<body>
+
+<h3>Logout with Session Id</h3>
+
+<form name='s' action='http://localhost:8080/api/logout' method='POST'>
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td><input type='text' name='id' value=''></td>
+        </tr>
+        <tr>
+            <td>Session Id:</td>
+            <td><input type='text' name='token' value=''></td>
+        </tr>
+        <tr>
+            <td colspan='2'><input name="submit" type="submit" value="Logout"/></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+
+</html>

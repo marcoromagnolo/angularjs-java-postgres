@@ -1,0 +1,119 @@
+<script>
+  $(function() {
+    $( "#datepickerFrom, #datepickerTo" ).datepicker().click(function(){console.log("CLICK");});
+  });
+
+  function dateClose(){
+    $("#ui-datepicker-div").hide();
+    //$( "#datepickerFrom").datepicker("hide");
+  }
+</script>
+<div class="panel panel-primary" style="margin:1%;">
+    <div class="panel-heading">
+      <h3 class="panel-title">Filters</h3>
+    </div>
+  <form id="filters" role="search">
+    <table style="padding:5;line-height: 3;margin:1%;border-spacing:8px;">
+      <tr>
+        <td>Customer:</td>
+        <td>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Customer...">
+          </div>
+        </td>
+        <td>&nbspEnvironment:&nbsp</td>
+        <td>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Environment...">
+          </div>
+        </td>
+        <td>Product:&nbsp</td>
+        <td>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Product...">
+          </div>
+        </td>
+        <td>Component:&nbsp</td>
+        <td>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Component...">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>From:&nbsp</td>
+        <td>
+          <div class="input-group">
+            <input type='text' class="form-control" id='datepickerFrom' placeholder="From..."/>
+          </div>
+        </td>
+        <td>&nbspTo:&nbsp</td>
+        <td>
+          <div class="input-group">
+            <input type='text' class="form-control" id='datepickerTo' placeholder="To..."/>
+          </div>
+        </td>
+        <td>Status:&nbsp</td>
+        <td>
+          <div class="input-group" ng-include="'views/partials/statusMenu.html'"></div>
+        </td>
+        <td colspan="2">
+          <span class="input-group-btn" style="margin:auto; display:block;">
+            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span>&nbspSearch</button>
+          </span>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div class="panel panel-primary" style="margin: 1%;">
+  <div class="panel-heading">
+    <h3 class="panel-title">Deliveries</h3>
+  </div>
+    <table class="table">
+      <tr>
+        <th>CUSTOMER</th>
+        <th>ENVIRONMENT</th>
+        <th>PRODUCT</th>
+        <th>COMPONENT</th>
+        <th>STATUS</th>
+        <th>LAST MODIFY DATE</th>
+      </tr>
+      <tr>
+        <td>ALC</td>
+        <td>SIT</td>
+        <td>bingo</td>
+        <td>bingo-2.16</td>
+        <td>INSTALLATION IN PROGRESS</td>
+        <td>03/05/2016</td>
+        <td><a ng-href="#/details"><span class="glyphicon glyphicon-eye-open"></span> View Details</td>
+      </tr>
+      <tr>
+        <td>SPN</td>
+        <td>PROD</td>
+        <td>mobile-games</td>
+        <td>mobile-games-1.5.3.1.2</td>
+        <td>TEST COMPLETED</td>
+        <td>08/05/2016</td>
+        <td><a ng-href="#/details"><span class="glyphicon glyphicon-eye-open"></span> View Details</td>
+      </tr>
+      <tr>
+        <td>NT</td>
+        <td>NT1</td>
+        <td>mobile-games</td>
+        <td>mobile-games-1.5.3.1.3</td>
+        <td>CUSTOMIZATION IN PROGRESS</td>
+        <td>10/05/2016</td>
+        <td><a ng-href="#/details"><span class="glyphicon glyphicon-eye-open"></span> View Details</td>
+      </tr>
+      <tr>
+        <td>STAR</td>
+        <td>DEV</td>
+        <td>bingo</td>
+        <td>bingo-2.16</td>
+        <td>INSTALLATION BLOCKED</td>
+        <td>11/05/2016</td>
+        <td><a ng-href="#/details"><span class="glyphicon glyphicon-eye-open"></span> View Details</td>
+      </tr>
+   </table>
+</div>

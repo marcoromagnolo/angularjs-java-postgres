@@ -1,0 +1,52 @@
+<div ng-controller="AccountController">
+  <form role="form" name="registerForm" novalidate>
+    <div class="modal-body">
+        <div class="form-group">
+          <div class="form-group" ng-class="{'has-error': registerForm.firstName.$invalid && (registerForm.$submitted || registerForm.firstName.$touched)}">
+            <label for="firstName" translate>ACCOUNT_FORM_FIRSTNAME_LABEL</label>
+            <input type="text" class="form-control" id="firstName" name="firstName" maxlength="40" required placeholder="{{'ACCOUNT_FORM_FIRSTNAME_PLACEHOLDER' | translate}}" ng-model="user.firstName"/>
+            <span class="help-block" ng-show="registerForm.$submitted || registerForm.firstName.$touched">
+              <span ng-show="registerForm.firstName.$error.required" translate>ERROR_FIELD_REQUIRED</span>
+              <span ng-show="registerForm.firstName.$error.maxlength" translate>ERROR_FIELD_TOOLONG</span>
+            </span>
+          </div>
+          <div class="form-group" ng-class="{'has-error': registerForm.lastName.$invalid && (registerForm.$submitted || registerForm.lastName.$touched)}">
+            <label for="lastName" translate>ACCOUNT_FORM_LASTNAME_LABEL</label>
+            <input type="text" class="form-control" id="lastName" name="lastName" maxlength="40" required placeholder="{{'ACCOUNT_FORM_LASTNAME_PLACEHOLDER' | translate}}" ng-model="user.lastName"/>
+            <span class="help-block" ng-show="registerForm.$submitted || registerForm.lastName.$touched">
+              <span ng-show="registerForm.lastName.$error.required" translate>ERROR_FIELD_REQUIRED</span>
+              <span ng-show="registerForm.lastName.$error.maxlength" translate>ERROR_FIELD_TOOLONG</span>
+            </span>
+          </div>
+          <div class="form-group" ng-class="{'has-error': registerForm.email.$invalid && (registerForm.$submitted || registerForm.email.$touched)}">
+            <label for="email" translate>ACCOUNT_FORM_EMAIL_LABEL</label>
+            <input type="email" class="form-control" name="email" id="email" data-toggle="popover" data-placement="left" data-content="{{'ACCOUNT_REGISTER_EMAIL_TOOLTIP' | translate}}" data-trigger="hover" tooltip maxlength="160" required placeholder="{{'ACCOUNT_FORM_EMAIL_PLACEHOLDER' | translate}}" ng-model="user.email"/>
+            <span class="help-block" ng-show="registerForm.$submitted || registerForm.email.$touched">
+              <span ng-show="registerForm.email.$error.required" translate>ERROR_FIELD_REQUIRED</span>
+              <span ng-show="registerForm.email.$error.email" translate>ERROR_FIELD_EMAIL_REGEX</span>
+              <span ng-show="registerForm.email.$error.maxlength" translate>ERROR_FIELD_TOOLONG</span>
+              <span ng-show="registerForm.email.$error.custom">{{registerForm.email.$error.custom | translate}}</span>
+            </span>
+          </div>
+          <div class="form-group" ng-class="{'has-error': registerForm.password.$invalid && (registerForm.$submitted || registerForm.password.$touched)}">
+            <label for="password" translate>ACCOUNT_FORM_PASSWORD_LABEL</label>
+            <input type="password" class="form-control" name="password" id="password" data-toggle="popover" data-placement="left" data-content="{{'ACCOUNT_REGISTER_PASSWORD_TOOLTIP' | translate}}" data-trigger="hover" tooltip minlength="8" maxlength="64" required placeholder="{{'ACCOUNT_FORM_PASSWORD_PLACEHOLDER' | translate}}" ng-model="user.password"/>
+            <span class="help-block" ng-show="registerForm.$submitted || registerForm.password.$touched">
+              <span ng-show="registerForm.password.$error.required" translate>ERROR_FIELD_REQUIRED</span>
+              <span ng-show="registerForm.password.$error.minlength" translate>ERROR_FIELD_PASSWORD_MINLENGHT</span>
+              <span ng-show="registerForm.password.$error.custom">{{registerForm.password.$error.custom | translate}}</span>
+            </span>
+          </div>
+          <div class="alert alert-danger fade in" ng-show="error.code" style="text-align: center">
+            <strong>{{'ERROR' | translate}}</strong> {{error.code | translate}}
+          </div>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="reset" class="btn btn-default pull-left" ng-click="reset(registerForm)" translate>ACCOUNT_FORM_BTN_RESET</button>
+      <input type="submit" class="btn btn-primary pull-right" ng-click="register(registerForm,user)" value="{{'ACCOUNT_FORM_BTN_REGISTER' | translate}}"/>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,1 @@
+INSERT INTO session (token, expiry) VALUES ('','');

@@ -1,0 +1,28 @@
+<html>
+<head><title>Reset Page</title></head>
+<body>
+
+<h3>Reset old password with new Password</h3>
+
+<form name='f' action='http://localhost:8080/api/reset' method='POST'>
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td><input type='text' name='username' value=''></td>
+        </tr>
+        <tr>
+            <td>Temporary Password:</td>
+            <td><input type='password' name='tempPassword'/></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type='password' name='password'/></td>
+        </tr>
+        <tr>
+            <td colspan='2'><input name="submit" type="submit" value="Reset"/></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

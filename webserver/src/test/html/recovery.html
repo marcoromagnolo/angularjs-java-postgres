@@ -1,0 +1,29 @@
+<html>
+<head><title>Recovery Page</title></head>
+<body>
+
+<h3>Recovery by Email</h3>
+
+<form name='r' action='http://localhost:8080/api/recovery' method='POST'>
+    <table>
+        <tr>
+            <td>Email:</td>
+            <td><input type='text' name='email' value=''></td>
+        </tr>
+        <tr>
+            <td>Language:</td>
+            <td>
+                <select name="lang">
+                    <option value="it">Italiano</option>
+                    <option value="en">English</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='2'><input name="submit" type="submit" value="Recovery"/></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
